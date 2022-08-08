@@ -1,0 +1,18 @@
+{
+  "name": "@napi-rs/clipboard-win32-x64-msvc",
+  "version": "0.0.0",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "clipboard.win32-x64-msvc.node",
+  "files": [
+    "clipboard.win32-x64-msvc.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}
