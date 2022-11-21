@@ -7,7 +7,7 @@ version = "0.0.0"
 crate-type = ["cdylib"]
 
 [dependencies]
-arboard = { version = "2", features = ["wayland-data-control"] }
+arboard = { version = "3", features = ["wayland-data-control"] }
 napi = { version = "2", default-features = false, features = ["napi3"] }
 napi-derive = "2"
 
