@@ -13,11 +13,11 @@ __metadata:
   linkType: hard
 
 "@napi-rs/cli@npm:^2.14.1":
-  version: 2.14.1
-  resolution: "@napi-rs/cli@npm:2.14.1"
+  version: 2.14.8
+  resolution: "@napi-rs/cli@npm:2.14.8"
   bin:
     napi: scripts/index.js
-  checksum: ac93f7ce67b9b5ab839fadc7afbaa0a33126325807578133df016ed9d88455f403e7ceb9f225d2996d65e4a9d67960516533bab155a47998192f42febe35de24
+  checksum: 59ccab188d0e40a0591d7402624fa882928a967ffc6b9a6dbfc00acbb828ca292cab85a8e965492367f6ca0d0fab600831a7f4b7f0495c47830e3c6895fc4a07
   languageName: node
   linkType: hard
 
@@ -31,106 +31,106 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@napi-rs/image-android-arm-eabi@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-android-arm-eabi@npm:1.4.4"
+"@napi-rs/image-android-arm-eabi@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-android-arm-eabi@npm:1.6.0"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@napi-rs/image-android-arm64@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-android-arm64@npm:1.4.4"
+"@napi-rs/image-android-arm64@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-android-arm64@npm:1.6.0"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-darwin-arm64@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-darwin-arm64@npm:1.4.4"
+"@napi-rs/image-darwin-arm64@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-darwin-arm64@npm:1.6.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-darwin-x64@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-darwin-x64@npm:1.4.4"
+"@napi-rs/image-darwin-x64@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-darwin-x64@npm:1.6.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-freebsd-x64@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-freebsd-x64@npm:1.4.4"
+"@napi-rs/image-freebsd-x64@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-freebsd-x64@npm:1.6.0"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-arm-gnueabihf@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-linux-arm-gnueabihf@npm:1.4.4"
+"@napi-rs/image-linux-arm-gnueabihf@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-linux-arm-gnueabihf@npm:1.6.0"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-arm64-gnu@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-linux-arm64-gnu@npm:1.4.4"
+"@napi-rs/image-linux-arm64-gnu@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-linux-arm64-gnu@npm:1.6.0"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-arm64-musl@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-linux-arm64-musl@npm:1.4.4"
+"@napi-rs/image-linux-arm64-musl@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-linux-arm64-musl@npm:1.6.0"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-x64-gnu@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-linux-x64-gnu@npm:1.4.4"
+"@napi-rs/image-linux-x64-gnu@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-linux-x64-gnu@npm:1.6.0"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@napi-rs/image-linux-x64-musl@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-linux-x64-musl@npm:1.4.4"
+"@napi-rs/image-linux-x64-musl@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-linux-x64-musl@npm:1.6.0"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@napi-rs/image-win32-ia32-msvc@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-win32-ia32-msvc@npm:1.4.4"
+"@napi-rs/image-win32-ia32-msvc@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-win32-ia32-msvc@npm:1.6.0"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@napi-rs/image-win32-x64-msvc@npm:1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image-win32-x64-msvc@npm:1.4.4"
+"@napi-rs/image-win32-x64-msvc@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@napi-rs/image-win32-x64-msvc@npm:1.6.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
 "@napi-rs/image@npm:^1.4.4":
-  version: 1.4.4
-  resolution: "@napi-rs/image@npm:1.4.4"
+  version: 1.6.0
+  resolution: "@napi-rs/image@npm:1.6.0"
   dependencies:
-    "@napi-rs/image-android-arm-eabi": 1.4.4
-    "@napi-rs/image-android-arm64": 1.4.4
-    "@napi-rs/image-darwin-arm64": 1.4.4
-    "@napi-rs/image-darwin-x64": 1.4.4
-    "@napi-rs/image-freebsd-x64": 1.4.4
-    "@napi-rs/image-linux-arm-gnueabihf": 1.4.4
-    "@napi-rs/image-linux-arm64-gnu": 1.4.4
-    "@napi-rs/image-linux-arm64-musl": 1.4.4
-    "@napi-rs/image-linux-x64-gnu": 1.4.4
-    "@napi-rs/image-linux-x64-musl": 1.4.4
-    "@napi-rs/image-win32-ia32-msvc": 1.4.4
-    "@napi-rs/image-win32-x64-msvc": 1.4.4
+    "@napi-rs/image-android-arm-eabi": 1.6.0
+    "@napi-rs/image-android-arm64": 1.6.0
+    "@napi-rs/image-darwin-arm64": 1.6.0
+    "@napi-rs/image-darwin-x64": 1.6.0
+    "@napi-rs/image-freebsd-x64": 1.6.0
+    "@napi-rs/image-linux-arm-gnueabihf": 1.6.0
+    "@napi-rs/image-linux-arm64-gnu": 1.6.0
+    "@napi-rs/image-linux-arm64-musl": 1.6.0
+    "@napi-rs/image-linux-x64-gnu": 1.6.0
+    "@napi-rs/image-linux-x64-musl": 1.6.0
+    "@napi-rs/image-win32-ia32-msvc": 1.6.0
+    "@napi-rs/image-win32-x64-msvc": 1.6.0
   dependenciesMeta:
     "@napi-rs/image-android-arm-eabi":
       optional: true
@@ -156,7 +156,7 @@ __metadata:
       optional: true
     "@napi-rs/image-win32-x64-msvc":
       optional: true
-  checksum: f8a130725e41a65865e487b6f78c8c5a3a0832da47ad95043629dbe4f5379d8cf00fb8d01acf2f0019c44bfbe58e937a66e5f2b4dfce89778bb42ce3ae20754d
+  checksum: 50cdbcecbb126f6f7507948048fffa7510f26b57a21a64338c6a7f384a81d514e73e50f2028201fcd24beb4e845963e6ee21c3ecc524c4adcda65c441fe3db16
   languageName: node
   linkType: hard
 
@@ -229,11 +229,11 @@ __metadata:
   linkType: hard
 
 "acorn@npm:^8.8.1":
-  version: 8.8.1
-  resolution: "acorn@npm:8.8.1"
+  version: 8.8.2
+  resolution: "acorn@npm:8.8.2"
   bin:
     acorn: bin/acorn
-  checksum: 4079b67283b94935157698831967642f24a075c52ce3feaaaafe095776dfbe15d86a1b33b1e53860fc0d062ed6c83f4284a5c87c85b9ad51853a01173da6097f
+  checksum: f790b99a1bf63ef160c967e23c46feea7787e531292bb827126334612c234ed489a0dc2c7ba33156416f0ffa8d25bf2b0fdb7f35c2ba60eb3e960572bece4001
   languageName: node
   linkType: hard
 
@@ -365,8 +365,8 @@ __metadata:
   linkType: hard
 
 "ava@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "ava@npm:5.1.0"
+  version: 5.2.0
+  resolution: "ava@npm:5.2.0"
   dependencies:
     acorn: ^8.8.1
     acorn-walk: ^8.2.0
@@ -375,10 +375,10 @@ __metadata:
     arrify: ^3.0.0
     callsites: ^4.0.0
     cbor: ^8.1.0
-    chalk: ^5.1.2
+    chalk: ^5.2.0
     chokidar: ^3.5.3
     chunkd: ^2.0.1
-    ci-info: ^3.6.1
+    ci-info: ^3.7.1
     ci-parallel-vars: ^1.0.1
     clean-yaml-object: ^0.1.0
     cli-truncate: ^3.1.0
@@ -390,7 +390,7 @@ __metadata:
     del: ^7.0.0
     emittery: ^1.0.1
     figures: ^5.0.0
-    globby: ^13.1.2
+    globby: ^13.1.3
     ignore-by-default: ^2.1.0
     indent-string: ^5.0.0
     is-error: ^2.2.2
@@ -420,7 +420,7 @@ __metadata:
       optional: true
   bin:
     ava: entrypoints/cli.mjs
-  checksum: 5f0b7ebd2ee236fe7698bf85ce6c67f8e4aed841a23f0bcf5e13ed6614f8e94be4937330ac721060f333b18f6d370e5c644649a1a979b2962d039d904f43b364
+  checksum: d5991f1f3d7ca0e63e0df185c5c025a9c80614dd42537336a9b96ea29e8a8d5ad680c1e775dacabb55f3b1b2d63764e468f201d52a44166c8a88d4e9309cde61
   languageName: node
   linkType: hard
 
@@ -515,7 +515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^5.1.2":
+"chalk@npm:^5.2.0":
   version: 5.2.0
   resolution: "chalk@npm:5.2.0"
   checksum: 03d8060277de6cf2fd567dc25fcf770593eb5bb85f460ce443e49255a30ff1242edd0c90a06a03803b0466ff0687a939b41db1757bec987113e83de89a003caa
@@ -555,10 +555,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ci-info@npm:^3.6.1":
-  version: 3.7.1
-  resolution: "ci-info@npm:3.7.1"
-  checksum: 72d93d5101ea1c186511277fbd8d06ae8a6e028cc2fb94361e92bf735b39c5ebd192e8d15a66ff8c4e3ed569f87c2f844e96f90e141b2de5c649f77ec34ff601
+"ci-info@npm:^3.7.1":
+  version: 3.8.0
+  resolution: "ci-info@npm:3.8.0"
+  checksum: d0a4d3160497cae54294974a7246202244fff031b0a6ea20dd57b10ec510aa17399c41a1b0982142c105f3255aff2173e5c0dd7302ee1b2f28ba3debda375098
   languageName: node
   linkType: hard
 
@@ -989,19 +989,19 @@ __metadata:
   linkType: hard
 
 "glob@npm:^8.0.1":
-  version: 8.0.3
-  resolution: "glob@npm:8.0.3"
+  version: 8.1.0
+  resolution: "glob@npm:8.1.0"
   dependencies:
     fs.realpath: ^1.0.0
     inflight: ^1.0.4
     inherits: 2
     minimatch: ^5.0.1
     once: ^1.3.0
-  checksum: 50bcdea19d8e79d8de5f460b1939ffc2b3299eac28deb502093fdca22a78efebc03e66bf54f0abc3d3d07d8134d19a32850288b7440d77e072aa55f9d33b18c5
+  checksum: 92fbea3221a7d12075f26f0227abac435de868dd0736a17170663783296d0dd8d3d532a5672b4488a439bf5d7fb85cdd07c11185d6cd39184f0385cbdfb86a47
   languageName: node
   linkType: hard
 
-"globby@npm:^13.1.2":
+"globby@npm:^13.1.2, globby@npm:^13.1.3":
   version: 13.1.3
   resolution: "globby@npm:13.1.3"
   dependencies:
@@ -1029,9 +1029,9 @@ __metadata:
   linkType: hard
 
 "http-cache-semantics@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "http-cache-semantics@npm:4.1.0"
-  checksum: 974de94a81c5474be07f269f9fd8383e92ebb5a448208223bfb39e172a9dbc26feff250192ecc23b9593b3f92098e010406b0f24bd4d588d631f80214648ed42
+  version: 4.1.1
+  resolution: "http-cache-semantics@npm:4.1.1"
+  checksum: 83ac0bc60b17a3a36f9953e7be55e5c8f41acc61b22583060e8dedc9dd5e3607c823a88d0926f9150e571f90946835c7fe150732801010845c72cd8bbff1a236
   languageName: node
   linkType: hard
 
@@ -1141,9 +1141,9 @@ __metadata:
   linkType: hard
 
 "irregular-plurals@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "irregular-plurals@npm:3.3.0"
-  checksum: 1282d8adfb00a9718655ce21e5b096d4b31d2115c817a30e1e3254648ae4ac0f84d706cd0cad2a93c64f4bb5c5572ea8f63fcc9766f005a5362031c56d9e77b5
+  version: 3.4.1
+  resolution: "irregular-plurals@npm:3.4.1"
+  checksum: 1a22c5645957a4c09d7d0d206ee35bfc22a62750416cbcfb9049ae41c004fd9606388f04c569cb9ac153ff19d7649f3133e153ec4aad4fa3b278f06e73bd383b
   languageName: node
   linkType: hard
 
@@ -1276,11 +1276,11 @@ __metadata:
   linkType: hard
 
 "locate-path@npm:^7.1.0":
-  version: 7.1.1
-  resolution: "locate-path@npm:7.1.1"
+  version: 7.2.0
+  resolution: "locate-path@npm:7.2.0"
   dependencies:
     p-locate: ^6.0.0
-  checksum: 1d88af5b512d6e6398026252e17382907126683ab09ae5d6b8918d0bc72ca2642e1ad6e2fe635c5920840e369618e5d748c08deb57ba537fdd3f78e87ca993e0
+  checksum: c1b653bdf29beaecb3d307dfb7c44d98a2a98a02ebe353c9ad055d1ac45d6ed4e1142563d222df9b9efebc2bcb7d4c792b507fad9e7150a04c29530b7db570f8
   languageName: node
   linkType: hard
 
@@ -1301,9 +1301,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^7.7.1":
-  version: 7.14.1
-  resolution: "lru-cache@npm:7.14.1"
-  checksum: d72c6713c6a6d86836a7a6523b3f1ac6764768cca47ec99341c3e76db06aacd4764620e5e2cda719a36848785a52a70e531822dc2b33fb071fa709683746c104
+  version: 7.17.0
+  resolution: "lru-cache@npm:7.17.0"
+  checksum: 28c2a98ad313b8d61beac1f08257b6f0ca990e39d24a9bc831030b6e209447cfb11c6d9d1a774282189bfc9609d1dfd17ebe485228dd68f7b96b6b9b7740894e
   languageName: node
   linkType: hard
 
@@ -1402,11 +1402,11 @@ __metadata:
   linkType: hard
 
 "minimatch@npm:^5.0.1":
-  version: 5.1.2
-  resolution: "minimatch@npm:5.1.2"
+  version: 5.1.6
+  resolution: "minimatch@npm:5.1.6"
   dependencies:
     brace-expansion: ^2.0.1
-  checksum: 32ffda25b9fb8270a1c1beafdb7489dc0e411af553495136509a945691f63c9b6b000eeeaaf8bffe3efa609c1d6d3bc0f5a106f6c3443b5c05da649100ded964
+  checksum: 7564208ef81d7065a370f788d337cd80a689e981042cb9a1d0e6580b6c6a8c9279eba80010516e258835a988363f99f54a6f711a315089b8b42694f5da9d0d77
   languageName: node
   linkType: hard
 
@@ -1471,11 +1471,9 @@ __metadata:
   linkType: hard
 
 "minipass@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "minipass@npm:4.0.0"
-  dependencies:
-    yallist: ^4.0.0
-  checksum: 7a609afbf394abfcf9c48e6c90226f471676c8f2a67f07f6838871afb03215ede431d1433feffe1b855455bcb13ef0eb89162841b9796109d6fed8d89790f381
+  version: 4.2.4
+  resolution: "minipass@npm:4.2.4"
+  checksum: c664f2ae4401408d1e7a6e4f50aca45f87b1b0634bc9261136df5c378e313e77355765f73f59c4a5abcadcdf43d83fcd3eb14e4a7cdcce8e36508e2290345753
   languageName: node
   linkType: hard
 
@@ -1732,13 +1730,13 @@ __metadata:
   linkType: hard
 
 "readable-stream@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "readable-stream@npm:3.6.0"
+  version: 3.6.1
+  resolution: "readable-stream@npm:3.6.1"
   dependencies:
     inherits: ^2.0.3
     string_decoder: ^1.1.1
     util-deprecate: ^1.0.1
-  checksum: d4ea81502d3799439bb955a3a5d1d808592cf3133350ed352aeaa499647858b27b1c4013984900238b0873ec8d0d8defce72469fb7a83e61d53f5ad61cb80dc8
+  checksum: b7ab0508dba3c37277b9e43c0a970ea27635375698859a687f558c3c9393154b6c4f39c3aa5689641de183fffa26771bc1a45878ddde0236ad18fc8fdfde50ea
   languageName: node
   linkType: hard
 
@@ -2140,8 +2138,8 @@ __metadata:
   linkType: hard
 
 "yargs@npm:^17.6.2":
-  version: 17.6.2
-  resolution: "yargs@npm:17.6.2"
+  version: 17.7.1
+  resolution: "yargs@npm:17.7.1"
   dependencies:
     cliui: ^8.0.1
     escalade: ^3.1.1
@@ -2150,7 +2148,7 @@ __metadata:
     string-width: ^4.2.3
     y18n: ^5.0.5
     yargs-parser: ^21.1.1
-  checksum: 47da1b0d854fa16d45a3ded57b716b013b2179022352a5f7467409da5a04a1eef5b3b3d97a2dfc13e8bbe5f2ffc0afe3bc6a4a72f8254e60f5a4bd7947138643
+  checksum: 3d8a43c336a4942bc68080768664aca85c7bd406f018bad362fd255c41c8f4e650277f42fd65d543fce99e084124ddafee7bbfc1a5c6a8fda4cec78609dcf8d4
   languageName: node
   linkType: hard
 
