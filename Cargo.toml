@@ -8,7 +8,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 arboard = { version = "3", features = ["wayland-data-control"] }
-base64 = "0.13.0"
+base64 = "0.21.0"
 duct = "0.13.5"
 wsl = "0.1.0"
 napi = { version = "2", default-features = false, features = ["napi3"] }
