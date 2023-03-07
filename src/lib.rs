@@ -3,19 +3,20 @@
 #[macro_use]
 extern crate napi_derive;
 
+use base64::{engine::general_purpose, Engine as _};
 use duct::cmd;
 use std::borrow::Cow;
+use std::cell::Cell;
 use std::env;
 use std::io::Write;
 use std::process::{Command, Stdio};
 
 use napi::Status::GenericFailure;
 use napi::{bindgen_prelude::*, JsBuffer};
-use once_cell::unsync::OnceCell;
 
 #[napi]
 pub struct Clipboard {
-  lazy_inner: OnceCell<arboard::Clipboard>,
+  lazy_inner: Cell<Option<arboard::Clipboard>>,
 }
 
 fn clipboard_error_to_js_error(err: arboard::Error) -> Error {
@@ -27,16 +28,16 @@ impl Clipboard {
   #[napi(constructor)]
   pub fn new() -> Result<Self> {
     Ok(Clipboard {
-      lazy_inner: OnceCell::new(),
+      lazy_inner: Cell::new(None),
     })
   }
 
   fn inner(&mut self) -> std::result::Result<&mut arboard::Clipboard, arboard::Error> {
-    if self.lazy_inner.get().is_none() {
+    if self.lazy_inner.get_mut().is_none() {
       let clipboard = arboard::Clipboard::new()?;
-      assert!(self.lazy_inner.set(clipboard).is_ok())
+      self.lazy_inner.set(Some(clipboard))
     };
-    Ok(self.lazy_inner.get_mut().unwrap())
+    Ok(self.lazy_inner.get_mut().as_mut().unwrap())
   }
 
   /// Copy text to the clipboard. Has special handling for WSL and SSH sessions, otherwise
@@ -113,7 +114,7 @@ impl Clipboard {
 
 /// Set the clipboard contents using OSC 52 (picked up by most terminals)
 fn set_clipboard_osc_52(text: String) {
-  print!("\x1B]52;c;{}\x07", base64::encode(text));
+  print!("\x1B]52;c;{}\x07", general_purpose::STANDARD.encode(text));
 }
 
 /// Set the Windows clipboard using clip.exe in WSL
