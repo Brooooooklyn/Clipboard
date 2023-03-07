@@ -2,7 +2,7 @@
 
 Manipulate Clipboard in Node.js via native API.
 
-It's a Node.js binding for [1Password/aboard](https://github.com/1Password/arboard)
+It's a Node.js binding for [1Password/aboard](https://github.com/1Password/arboard) with additions from [rgwood/clipboard-anywhere](https://github.com/rgwood/clipboard-anywhere)
 
 [![install size](https://packagephobia.com/badge?p=@napi-rs/clipboard)](https://packagephobia.com/result?p=@napi-rs/clipboard)
 [![Downloads](https://img.shields.io/npm/dm/@napi-rs/clipboard.svg?sanitize=true)](https://npmcharts.com/compare/@napi-rs/clipboard?minimal=true)
