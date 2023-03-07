@@ -3,21 +3,23 @@
 #[macro_use]
 extern crate napi_derive;
 
+use duct::cmd;
 use std::borrow::Cow;
 use std::env;
 use std::io::Write;
 use std::process::{Command, Stdio};
-use duct::cmd;
 
+use napi::Status::GenericFailure;
 use napi::{bindgen_prelude::*, JsBuffer};
+use once_cell::unsync::OnceCell;
 
 #[napi]
 pub struct Clipboard {
-  inner: arboard::Clipboard,
+  lazy_inner: OnceCell<arboard::Clipboard>,
 }
 
 fn clipboard_error_to_js_error(err: arboard::Error) -> Error {
-  Error::new(Status::GenericFailure, format!("{err}"))
+  Error::new(GenericFailure, format!("{err}"))
 }
 
 #[napi]
@@ -25,8 +27,16 @@ impl Clipboard {
   #[napi(constructor)]
   pub fn new() -> Result<Self> {
     Ok(Clipboard {
-      inner: arboard::Clipboard::new().map_err(clipboard_error_to_js_error)?,
+      lazy_inner: OnceCell::new(),
     })
+  }
+
+  fn inner(&mut self) -> std::result::Result<&mut arboard::Clipboard, arboard::Error> {
+    if self.lazy_inner.get().is_none() {
+      let clipboard = arboard::Clipboard::new()?;
+      assert!(self.lazy_inner.set(clipboard).is_ok())
+    };
+    Ok(self.lazy_inner.get_mut().unwrap())
   }
 
   /// Copy text to the clipboard. Has special handling for WSL and SSH sessions, otherwise
@@ -41,8 +51,8 @@ impl Clipboard {
     } else {
       // we're probably running on a host/primary OS, so use the default clipboard
       self
-        .inner
-        .set_text(text)
+        .inner()
+        .and_then(|clipboard| clipboard.set_text(text))
         .map_err(clipboard_error_to_js_error)?;
     }
 
@@ -55,10 +65,13 @@ impl Clipboard {
       let stdout = cmd!("powershell.exe", "get-clipboard").read()?;
       Ok(stdout.trim().to_string())
     } else if env::var("SSH_CLIENT").is_ok() {
-      Err(Error::new(Status::GenericFailure, "SSH clipboard not supported"))
+      Err(Error::new(GenericFailure, "SSH clipboard not supported"))
     } else {
       // we're probably running on a host/primary OS, so use the default clipboard
-      self.inner.get_text().map_err(clipboard_error_to_js_error)
+      self
+        .inner()
+        .and_then(|clipboard| clipboard.get_text())
+        .map_err(clipboard_error_to_js_error)
     }
   }
 
@@ -66,8 +79,8 @@ impl Clipboard {
   /// Returns a buffer contains the raw RGBA pixels data
   pub fn get_image(&mut self, env: Env) -> Result<JsBuffer> {
     self
-      .inner
-      .get_image()
+      .inner()
+      .and_then(|clipboard| clipboard.get_image())
       .map_err(clipboard_error_to_js_error)
       .and_then(|image| unsafe {
         env.create_buffer_with_borrowed_data(
@@ -86,11 +99,13 @@ impl Clipboard {
   /// RGBA bytes
   pub fn set_image(&mut self, width: u32, height: u32, image: Buffer) -> Result<()> {
     self
-      .inner
-      .set_image(arboard::ImageData {
-        width: width as usize,
-        height: height as usize,
-        bytes: Cow::Borrowed(image.as_ref()),
+      .inner()
+      .and_then(|clipboard| {
+        clipboard.set_image(arboard::ImageData {
+          width: width as usize,
+          height: height as usize,
+          bytes: Cow::Borrowed(image.as_ref()),
+        })
       })
       .map_err(clipboard_error_to_js_error)
   }
@@ -103,13 +118,37 @@ fn set_clipboard_osc_52(text: String) {
 
 /// Set the Windows clipboard using clip.exe in WSL
 fn set_wsl_clipboard(s: String) -> Result<()> {
-  let mut clipboard = Command::new("clip.exe").stdin(Stdio::piped()).spawn()?;
-  let mut clipboard_stdin = clipboard
-    .stdin
-    .take()
-    .ok_or_else(|| Error::new(Status::GenericFailure, "Could not get stdin handle for clip.exe"))?;
+  let mut clipboard = Command::new("clip.exe")
+    .stdin(Stdio::piped())
+    .stdout(Stdio::piped())
+    .stderr(Stdio::piped())
+    .spawn()?;
+  {
+    let mut clipboard_stdin = clipboard
+      .stdin
+      .take()
+      .ok_or_else(|| Error::new(GenericFailure, "Could not get stdin handle for clip.exe"))?;
+    clipboard_stdin.write_all(s.as_bytes())?;
+  }
 
-  clipboard_stdin.write_all(s.as_bytes())?;
+  clipboard
+    .wait()
+    .map_err(|err| {
+      Error::new(
+        GenericFailure,
+        format!("Could not wait for clip.exe, reason: {err}"),
+      )
+    })
+    .and_then(|status| {
+      if status.success() {
+        Ok(())
+      } else {
+        Err(Error::new(
+          GenericFailure,
+          format!("clip.exe stopped with status {status}"),
+        ))
+      }
+    })?;
 
   Ok(())
 }
