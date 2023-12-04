@@ -21,7 +21,7 @@
   "devDependencies": {
     "@napi-rs/cli": "^2.14.1",
     "@napi-rs/image": "^1.4.4",
-    "ava": "^5.1.0"
+    "ava": "^6.0.0"
   },
   "ava": {
     "timeout": "2m"
