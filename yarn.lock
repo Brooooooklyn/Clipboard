@@ -34,8 +34,8 @@ __metadata:
   linkType: hard
 
 "@napi-rs/cli@npm:^3.0.0-alpha.23":
-  version: 3.0.0-alpha.23
-  resolution: "@napi-rs/cli@npm:3.0.0-alpha.23"
+  version: 3.0.0-alpha.24
+  resolution: "@napi-rs/cli@npm:3.0.0-alpha.24"
   dependencies:
     "@napi-rs/cross-toolchain": "npm:^0.0.14"
     "@octokit/rest": "npm:^20.0.2"
@@ -63,7 +63,7 @@ __metadata:
   bin:
     napi: dist/cli.js
     napi-raw: cli.mjs
-  checksum: b20f1785d0803ce96ee13da957230e1caeb1ee01dca7de00e9362cfe309ffeddfcbf697730b437812224d801fc887d6159f5bd83adc8a3aab9ede761a66a3518
+  checksum: 497088a9cca3b498921ac1c4ac16b507ca939b00db42fc01bfad47f9d994a82d5a40ca74eb02011911608569b2dbafbebdfeea67daffba86259a22221cf32ca9
   languageName: node
   linkType: hard
 
