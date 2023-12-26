@@ -4,24 +4,25 @@
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
-    "name": "clipboard",
-    "triples": {
-      "additional": [
-        "aarch64-apple-darwin",
-        "aarch64-unknown-linux-gnu",
-        "aarch64-unknown-linux-musl",
-        "aarch64-pc-windows-msvc",
-        "armv7-unknown-linux-gnueabihf",
-        "x86_64-unknown-linux-musl",
-        "i686-pc-windows-msvc"
-      ]
-    }
+    "binaryName": "clipboard",
+    "targets": [
+      "x86_64-apple-darwin",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "aarch64-apple-darwin",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "aarch64-pc-windows-msvc",
+      "armv7-unknown-linux-gnueabihf",
+      "x86_64-unknown-linux-musl",
+      "i686-pc-windows-msvc"
+    ]
   },
   "license": "MIT",
   "devDependencies": {
-    "@napi-rs/cli": "^2.14.1",
-    "@napi-rs/image": "^1.4.4",
-    "ava": "^5.1.0"
+    "@napi-rs/cli": "^3.0.0-alpha.23",
+    "@napi-rs/image": "^1.7.0",
+    "ava": "^6.0.1"
   },
   "ava": {
     "timeout": "2m"
@@ -37,5 +38,5 @@
     "test": "ava",
     "version": "napi version"
   },
-  "packageManager": "yarn@3.6.3"
+  "packageManager": "yarn@4.0.2"
 }
