@@ -85,7 +85,7 @@ impl Clipboard {
       .map_err(clipboard_error_to_js_error)
       .and_then(|image| unsafe {
         env.create_buffer_with_borrowed_data(
-          image.bytes.as_ptr(),
+          image.bytes.as_ptr().cast_mut(),
           image.bytes.len(),
           image,
           |i, _| {
