@@ -38,5 +38,5 @@
     "test": "ava",
     "version": "napi version && git add npm"
   },
-  "packageManager": "yarn@4.8.0"
+  "packageManager": "yarn@4.8.1"
 }
