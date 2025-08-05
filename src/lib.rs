@@ -11,8 +11,7 @@ use std::env;
 use std::io::Write;
 use std::process::{Command, Stdio};
 
-use napi::Status::GenericFailure;
-use napi::{bindgen_prelude::*, JsBuffer};
+use napi::bindgen_prelude::*;
 
 #[napi]
 pub struct Clipboard {
@@ -20,7 +19,7 @@ pub struct Clipboard {
 }
 
 fn clipboard_error_to_js_error(err: arboard::Error) -> Error {
-  Error::new(GenericFailure, format!("{err}"))
+  Error::new(Status::GenericFailure, format!("{err}"))
 }
 
 #[napi]
@@ -66,7 +65,10 @@ impl Clipboard {
       let stdout = cmd!("powershell.exe", "get-clipboard").read()?;
       Ok(stdout.trim().to_string())
     } else if env::var("SSH_CLIENT").is_ok() {
-      Err(Error::new(GenericFailure, "SSH clipboard not supported"))
+      Err(Error::new(
+        Status::GenericFailure,
+        "SSH clipboard not supported",
+      ))
     } else {
       // we're probably running on a host/primary OS, so use the default clipboard
       self
@@ -78,22 +80,22 @@ impl Clipboard {
 
   #[napi]
   /// Returns a buffer contains the raw RGBA pixels data
-  pub fn get_image(&mut self, env: Env) -> Result<JsBuffer> {
+  pub fn get_image(&mut self, env: Env) -> Result<BufferSlice> {
     self
       .inner()
       .and_then(|clipboard| clipboard.get_image())
       .map_err(clipboard_error_to_js_error)
       .and_then(|image| unsafe {
-        env.create_buffer_with_borrowed_data(
+        BufferSlice::from_external(
+          &env,
           image.bytes.as_ptr().cast_mut(),
           image.bytes.len(),
           image,
-          |i, _| {
+          |_, i| {
             drop(i);
           },
         )
       })
-      .map(|b| b.into_raw())
   }
 
   #[napi]
@@ -125,10 +127,12 @@ fn set_wsl_clipboard(s: String) -> Result<()> {
     .stderr(Stdio::piped())
     .spawn()?;
   {
-    let mut clipboard_stdin = clipboard
-      .stdin
-      .take()
-      .ok_or_else(|| Error::new(GenericFailure, "Could not get stdin handle for clip.exe"))?;
+    let mut clipboard_stdin = clipboard.stdin.take().ok_or_else(|| {
+      Error::new(
+        Status::GenericFailure,
+        "Could not get stdin handle for clip.exe",
+      )
+    })?;
     clipboard_stdin.write_all(s.as_bytes())?;
   }
 
@@ -136,7 +140,7 @@ fn set_wsl_clipboard(s: String) -> Result<()> {
     .wait()
     .map_err(|err| {
       Error::new(
-        GenericFailure,
+        Status::GenericFailure,
         format!("Could not wait for clip.exe, reason: {err}"),
       )
     })
@@ -145,7 +149,7 @@ fn set_wsl_clipboard(s: String) -> Result<()> {
         Ok(())
       } else {
         Err(Error::new(
-          GenericFailure,
+          Status::GenericFailure,
           format!("clip.exe stopped with status {status}"),
         ))
       }

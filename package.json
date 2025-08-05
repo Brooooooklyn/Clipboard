@@ -20,9 +20,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@napi-rs/cli": "^3.0.0-alpha.23",
-    "@napi-rs/image": "^1.7.0",
-    "ava": "^6.0.1"
+    "@napi-rs/cli": "^3.0.4",
+    "@napi-rs/image": "^1.11.1",
+    "ava": "^6.4.1"
   },
   "ava": {
     "timeout": "2m"
