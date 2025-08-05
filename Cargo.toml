@@ -11,11 +11,12 @@ arboard = { version = "3", features = ["wayland-data-control"] }
 base64 = "0.22.0"
 duct = "1.0.0"
 wsl = "0.1.0"
-napi = { version = "2", default-features = false, features = ["napi3"] }
-napi-derive = "2"
+napi = { version = "3", default-features = false, features = ["napi3"] }
+napi-derive = "3"
 
 [build-dependencies]
 napi-build = "2"
 
 [profile.release]
 lto = true
+strip = "symbols"
