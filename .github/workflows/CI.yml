@@ -122,8 +122,8 @@ jobs:
           - host: macos-latest
             target: x86_64-apple-darwin
         node:
-          - '20'
           - '22'
+          - '24'
     runs-on: ${{ matrix.settings.host }}
     steps:
       - uses: actions/checkout@v6
@@ -153,8 +153,8 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '20'
           - '22'
+          - '24'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -193,8 +193,8 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '20'
           - '22'
+          - '24'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
