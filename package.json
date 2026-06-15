@@ -42,5 +42,5 @@
     "test": "ava",
     "version": "napi version && git add npm"
   },
-  "packageManager": "yarn@4.16.0"
+  "packageManager": "yarn@4.17.0"
 }
