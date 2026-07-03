@@ -39,8 +39,9 @@
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
     "prepublishOnly": "napi prepublish -t npm",
+    "preversion": "napi build --platform && git add .",
     "test": "ava",
-    "version": "napi version && git add npm"
+    "version": "napi version"
   },
   "packageManager": "yarn@4.17.0"
 }
