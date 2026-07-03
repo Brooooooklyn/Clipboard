@@ -24,7 +24,7 @@ jobs:
         settings:
           - host: macos-latest
             target: x86_64-apple-darwin
-            build: yarn build
+            build: yarn build --target x86_64-apple-darwin
           - host: windows-latest
             build: yarn build
             target: x86_64-pc-windows-msvc
@@ -119,8 +119,10 @@ jobs:
         settings:
           - host: windows-latest
             target: x86_64-pc-windows-msvc
+            architecture: x64
           - host: macos-latest
             target: x86_64-apple-darwin
+            architecture: x64
         node:
           - '22'
           - '24'
@@ -133,6 +135,7 @@ jobs:
           node-version: ${{ matrix.node }}
           check-latest: true
           cache: yarn
+          architecture: ${{ matrix.settings.architecture }}
       - name: Install dependencies
         run: yarn install
       - name: Download artifacts
