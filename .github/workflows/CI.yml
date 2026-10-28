@@ -61,7 +61,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 26
           cache: yarn
       - name: Install
         uses: dtolnay/rust-toolchain@stable
@@ -97,7 +97,7 @@ jobs:
         uses: actions/setup-node@v7
         if: matrix.settings.target == 'i686-pc-windows-msvc'
         with:
-          node-version: 22
+          node-version: 26
           cache: yarn
           architecture: x86
       - name: Build
@@ -243,7 +243,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: 26
           cache: yarn
       - name: Install latest npm
         run: npm install -g npm@latest
