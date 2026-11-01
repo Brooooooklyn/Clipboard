@@ -97,7 +97,9 @@ jobs:
         uses: actions/setup-node@v7
         if: matrix.settings.target == 'i686-pc-windows-msvc'
         with:
-          node-version: 26
+          # Node 26 does not provide Windows x86 builds; keep Node 22.
+          # Keep this as an expression so Renovate does not upgrade it.
+          node-version: ${{ '22' }}
           cache: yarn
           architecture: x86
       - name: Build
